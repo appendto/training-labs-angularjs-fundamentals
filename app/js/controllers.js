@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('introToAngularApp')
+angular.module('introToAngularApp.controllers', [])
     .controller('MainCtrl', function ($scope) {
         $scope.title = 'Home';
     })
@@ -12,11 +12,19 @@ angular.module('introToAngularApp')
         this.reservations = Reservations.query();
 
         this.createReservation = function() {
-            var reservation = new Reservations({
-                time: new Date(self.date + ' ' + self.time),
-                qty: self.qty,
-                name: self.name
-            });
+            var date = new Date(
+                    self.date.getFullYear(), 
+                    self.date.getMonth(), 
+                    self.date.getDate(), 
+                    self.time.getHours(), 
+                    self.time.getMinutes(), 
+                    self.time.getSeconds()
+                ),
+                reservation = new Reservations({
+                    time: new Date(date),
+                    qty: self.qty,
+                    name: self.name
+                });
 
             reservation.$save().then(function() {
                 self.reservations = Reservations.query();

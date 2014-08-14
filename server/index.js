@@ -2,12 +2,14 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var reservations = require('./routes/reservations').reservations;
+var items = require('./routes/menuItems').items;
 var sequelize = require('./db/context');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 // Models
 require('./db/models/reservation');
+require('./db/models/menuItem');
 
 sequelize
     .sync({ force: true })
@@ -33,6 +35,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('/api/reservations', reservations);
+app.use('/api/items', items);
 
 app.listen(3000);
 
