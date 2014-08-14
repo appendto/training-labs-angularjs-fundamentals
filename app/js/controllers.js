@@ -2,10 +2,24 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+angular.module('introToAngularApp')
+    .controller('MainCtrl', function ($scope) {
+        $scope.title = 'Home';
+    })
+    .controller('ReservationsCtrl', function(Reservations) {
+        var self = this;
+        
+        this.reservations = Reservations.query();
 
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+        this.createReservation = function() {
+            var reservation = new Reservations({
+                time: new Date(self.date + ' ' + self.time),
+                qty: self.qty,
+                name: self.name
+            });
 
-  }]);
+            reservation.$save().then(function() {
+                self.reservations = Reservations.query();
+            });
+        };
+    });
