@@ -1,0 +1,337 @@
+/* app css stylesheet */
+
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
+/* line 1, ../../app/styles/_menu.scss */
+
+.menu {
+  margin-top: 20px;
+}
+
+/* line 5, ../../app/styles/_menu.scss */
+
+.menu-item {
+  margin-bottom: 10px;
+  height: 200px;
+}
+
+/* line 8, ../../app/styles/_menu.scss */
+
+.menu-item.ng-enter,
+.menu-item.ng-move {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+/* line 14, ../../app/styles/_menu.scss */
+
+.menu-item.ng-enter.ng-enter-active,
+.menu-item.ng-move.ng-move-active {
+  opacity: 1;
+}
+
+/* line 18, ../../app/styles/_menu.scss */
+
+.menu-item.ng-leave {
+  -webkit-animation: 0.5s fade;
+  animation: 0.5s fade;
+}
+
+/* line 25, ../../app/styles/_menu.scss */
+
+.menu-item .menu-item-info {
+  padding: 5px;
+  height: 100%;
+}
+
+/* line 33, ../../app/styles/_menu.scss */
+
+.menu-item .menu-item-info h4 {
+  margin: 0;
+}
+
+/* line 39, ../../app/styles/_menu.scss */
+
+.menu-search-label {
+  font-size: 100%;
+  color: black;
+}
+
+@-webkit-keyframes fade {
+  /* line 45, ../../app/styles/_menu.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 46, ../../app/styles/_menu.scss */
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fade {
+  /* line 45, ../../app/styles/_menu.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 46, ../../app/styles/_menu.scss */
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  /* line 45, ../../app/styles/_menu.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 46, ../../app/styles/_menu.scss */
+  100% {
+    opacity: 0;
+  }
+}
+
+/* line 1, ../../app/styles/_order.scss */
+
+.order-options {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 7, ../../app/styles/_order.scss */
+
+.order .multiselect-container > li > a {
+  padding: 3px 20px;
+}
+
+/* line 12, ../../app/styles/_order.scss */
+
+.order .form-group {
+  margin-top: 5px;
+}
+
+/* line 16, ../../app/styles/_order.scss */
+
+.order .add-to-order {
+  margin-top: 10px;
+}
+
+/* line 25, ../../app/styles/main.scss */
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+
+/* line 33, ../../app/styles/main.scss */
+
+body {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #222222;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+/* line 45, ../../app/styles/main.scss */
+
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+
+/* line 51, ../../app/styles/main.scss */
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+/* line 56, ../../app/styles/main.scss */
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+
+/* line 64, ../../app/styles/main.scss */
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  color: white;
+}
+
+/* line 71, ../../app/styles/main.scss */
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+/* line 76, ../../app/styles/main.scss */
+
+.jumbotron {
+  border-radius: 0 !important;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background: url(/images/pizza.jpg);
+}
+
+/* line 83, ../../app/styles/main.scss */
+
+.jumbotron .lead {
+  color: white;
+}
+
+/* line 87, ../../app/styles/main.scss */
+
+.jumbotron h1,
+.jumbotron .lead {
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px;
+}
+
+/* line 91, ../../app/styles/main.scss */
+
+.jumbotron .btn {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px;
+}
+
+/* line 96, ../../app/styles/main.scss */
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+
+/* line 102, ../../app/styles/main.scss */
+
+.marketing {
+  margin: 40px 0;
+}
+
+/* line 106, ../../app/styles/main.scss */
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* line 110, ../../app/styles/main.scss */
+
+.nav-pills > li > a {
+  border-radius: 0;
+}
+
+/* line 114, ../../app/styles/main.scss */
+
+footer {
+  background-color: #d43f3a;
+}
+
+/* line 119, ../../app/styles/main.scss */
+
+.header .nav {
+  margin-right: 20px;
+}
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+  /* line 127, ../../app/styles/main.scss */
+
+  .navbar {
+    border: none;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  /* line 133, ../../app/styles/main.scss */
+
+  .btn {
+    border-radius: 0;
+  }
+
+  /* line 137, ../../app/styles/main.scss */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: inherit;
+  }
+
+  /* line 144, ../../app/styles/main.scss */
+
+  h1,
+  .h1 {
+    font-size: 39px;
+  }
+
+  /* line 147, ../../app/styles/main.scss */
+
+  h2,
+  .h2 {
+    font-size: 32px;
+  }
+
+  /* line 150, ../../app/styles/main.scss */
+
+  h3,
+  .h3 {
+    font-size: 26px;
+  }
+
+  /* line 153, ../../app/styles/main.scss */
+
+  h4,
+  .h4 {
+    font-size: 19px;
+  }
+
+  /* line 156, ../../app/styles/main.scss */
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    margin-top: 21px;
+    margin-bottom: 10.5px;
+  }
+}
