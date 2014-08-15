@@ -10,7 +10,6 @@
 
 .menu-item {
   margin-bottom: 10px;
-  height: 200px;
 }
 
 /* line 8, ../../app/styles/_menu.scss */
@@ -332,4 +331,44 @@ footer {
     margin-top: 21px;
     margin-bottom: 10.5px;
   }
+}
+
+/** Jonathan's added CSS **/
+
+.nav-pills a {
+  color: black;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background: #d43f3a;
+}
+
+.panel-default > .panel-heading {
+  background: #d43f3a;
+  color: white;
+}
+
+.validate-form input, .validate-form textarea {
+  transition: 0.5s linear all;
+  background: white;
+}
+
+.validate-form input.ng-invalid {
+    background-color: #f2dede;
+}
+
+.validate-form input.ng-valid {
+    background-color: #78FA89;
+}
+
+.validate-form textarea.ng-invalid {
+    background-color: #f2dede;
+}
+
+.validate-form textarea.ng-valid {
+    background-color: #78FA89;
+}
+
+.create-reservation {
+  border-right: 1px solid #e5e5e5;
 }

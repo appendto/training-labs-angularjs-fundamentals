@@ -26,27 +26,14 @@
     <!-- Add your site or application content here -->
     <div class="container">
         <div class="header">
-          <div class="cart pull-right">
+          <!-- <div class="cart pull-right">
               <a class="btn btn-primary ng-binding">
                   <span class="glyphicon glyphicon-shopping-cart"></span>
                   0
               </a>
-          </div>
+          </div> -->
 
-          <ul class="nav nav-pills pull-right">
-              <li class="active">
-                  <a ng-href="#/">Home</a>
-              </li>
-              <li>
-                  <a ng-href="#/menu">Our Menu</a>
-              </li>
-              <li>
-                  <a ng-href="#/contact">Contact Us</a>
-              </li>
-              <li>
-                  <a ng-href="#/reservations">Reservations</a>
-              </li>
-          </ul>
+          <tpp-nav-menu></tpp-nav-menu>
 
           <h3 class="text-muted">the pizza place</h3>
       </div>
@@ -80,6 +67,7 @@
     <script src="bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
     <script src="bower_components/kendo-ui/js/kendo.datetimepicker.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>

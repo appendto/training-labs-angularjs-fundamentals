@@ -1,0 +1,91 @@
+<section>
+    <div class="jumbotron">
+        <h1>Menu</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Our authentic Italian menu</div>
+                <div class="panel-body">
+                    <p>
+                    <label label="menu-search-label label">
+                        Search our menu:
+                    </label>
+                    <input type="text" placeholder="e.g. pizza, spaghetti" ng-model="vm.query" class="form-control" />
+                    </p>
+                </div>
+                
+                <table class="table table-bordered">
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Details</th>
+                    <tr class="menu-item" ng-repeat="item in vm.list | filter: vm.query">
+                        <td>
+                            <h4>{{item.name}}</h4>
+                        </td>
+                        <td>
+                            <small>{{item.price | currency}}
+                            </small>
+                        </td>
+                        <td>
+                            <p>{{item.description}}</p>
+                        </td>
+                        <td>
+                            <a ng-href="#/menu/{{item.id}}">Details</a></td>
+                        </td>
+                    </tr>
+                    <tr ng-if="!(vm.list | filter: vm.query).length">
+                        <td colspan="4">
+                            No items match your search.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+        
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <h1>Our authentic Italian menu</h1>
+                <label label="menu-search-label label">
+                    Search our menu:
+                </label>
+                <input type="text" placeholder="e.g. pizza, spaghetti" ng-model="vm.query" class="form-control" />
+            </div>
+        </div>
+        <div class="menu row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Details</th>
+                        <tr class="menu-item" ng-repeat="item in vm.list | filter: vm.query">
+                            <td>
+                                <h4>{{item.name}}</h4>
+                            </td>
+                            <td>
+                                <small>{{item.price | currency}}
+                                </small>
+                                <td>
+                                    <p>{{item.description}}</p>
+                                </td>
+                                <td>
+                                    <a ng-href="#/menu/{{item.id}}">Details</a></td>
+                                </td>
+                            </tr>
+                            <tr ng-if="!(vm.list | filter: vm.query).length">
+                                <td colspan="4">
+                                    No items match your search.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div> -->
+        </section>

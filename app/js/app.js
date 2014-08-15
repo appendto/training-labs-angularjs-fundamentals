@@ -5,6 +5,9 @@
 angular.module('introToAngularApp', [
 	'ngRoute',
 	'ngResource',
+	'ngAnimate',
+	'ngCookies',
+	'ngMessages',
 	'introToAngularApp.directives',
 	'introToAngularApp.controllers',
 	'introToAngularApp.services'
@@ -20,6 +23,16 @@ config(['$routeProvider',
 			.when('/reservations', {
 				templateUrl: 'partials/reservations.html',
 				controller: 'ReservationsCtrl',
+				controllerAs: 'vm'
+			})
+			.when('/menu', {
+				templateUrl: 'partials/menu.html',
+				controller: 'MenuCtrl',
+				controllerAs: 'vm'
+			})
+			.when('/contact', {
+				templateUrl: 'partials/contact.html',
+				controller: 'ContactCtrl',
 				controllerAs: 'vm'
 			})
 			.otherwise({
