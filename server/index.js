@@ -5,7 +5,8 @@ var reservations = require('./routes/reservations').reservations;
 var items = require('./routes/menuItems').items;
 var sequelize = require('./db/context');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser')
+var seed = require('./db/seed');
 
 // Models
 require('./db/models/reservation');
@@ -17,6 +18,8 @@ sequelize
         if (!!err) {
             console.log('Unable to connect to the database:', err)
         }
+
+        seed();
     });
 
 app.use(bodyParser.json());

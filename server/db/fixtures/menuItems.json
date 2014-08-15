@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Spaghetti",
+        "price": 12.99,
+        "id": 1,
+        "description": "Delicious authentic spaghetti sauce. Just like you'd expect from an italian grandmother."
+    },
+    {
+        "name": "Pizza",
+        "price": 12.99,
+        "id": 2,
+        "description": "Forget about it! Best pizza you can buy."
+    },
+    {
+        "name": "Lasagna",
+        "price": 12.99,
+        "id": 3,
+        "description": "Layer upon layer of lasagna goodness!"
+    },
+    {
+        "name": "Chicken Parmesean",
+        "price": 12.99,
+        "id": 4,
+        "description": "What's not too love about this delicious poultry pleasure."
+    },
+    {
+        "name": "Fish",
+        "price": 12.99,
+        "id": 5,
+        "description": "Fresh caught, and delicious"
+    },
+    {
+        "name": "More Pizza",
+        "price": 12.99,
+        "id": 6,
+        "description": "Simply the most delicious pizza you'll ever eat!"
+    },
+    {
+        "name": "Cannoli",
+        "price": 12.99,
+        "id": 6,
+        "description": "Unbelievable canoli!"
+    }
+]
