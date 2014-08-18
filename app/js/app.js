@@ -10,7 +10,8 @@ angular.module('introToAngularApp', [
 	'ngMessages',
 	'introToAngularApp.directives',
 	'introToAngularApp.controllers',
-	'introToAngularApp.services'
+	'introToAngularApp.services',
+	'introToAngularApp.filters'
 ]).
 config(['$routeProvider',
 	function($routeProvider) {

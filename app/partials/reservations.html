@@ -22,20 +22,24 @@
 
                 <form name="reservations" class="form" ng-class="{ 'validate-form': vm.submitted }" 
                             novalidate ng-submit="vm.createReservation()">
+                    <input name="id" type="hidden" ng-model="vm.reservation.id" />
+
                     <div class="form-group">
-                        <input name="name" type="text" ng-model="vm.name" class="form-control" placeholder="Name" required />
+                        <input name="name" type="text" ng-model="vm.reservation.name" class="form-control" placeholder="Name" required />
                     </div>
                     <div class="form-group">
-                        <input name="qty" type="number" ng-model="vm.qty" class="form-control" placeholder="Quantity" required />
+                        <input name="qty" type="number" ng-model="vm.reservation.qty" class="form-control" placeholder="Quantity" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" a2-date-picker ng-model="vm.date" placeholder="Date" required />
+                        <input type="text" a2-date-picker ng-model="vm.reservation.date" placeholder="Date" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" a2-time-picker ng-model="vm.time" start="09:00" placeholder="Time" required />
+                        <input type="text" a2-time-picker ng-model="vm.reservation.time" start="09:00" placeholder="Time" required />
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" ng-if="!vm.reservation.id" class="btn btn-primary">Create</button>
+                        <button type="submit" ng-if="vm.reservation.id" class="btn btn-primary">Update</button>
+                        <button ng-click="vm.clear()" type="reset" class="btn btn-danger">Reset</button>
                     </div>
                 </form>
             </div>
@@ -48,16 +52,18 @@
                 Reservation List
             </div>
 
-            <ul class="list-group">
+            <ul class="list-group reservation-list">
                 <li class="list-group-item" ng-if="!vm.reservations.length">
                     No reservations
                 </li>
                 <li class="list-group-item" ng-repeat="reserve in vm.reservations">
-                    <b>{{reserve.name}}</b> on {{reserve.time | date: 'fullDate' }} at {{reserve.time | date: 'shortTime' }}
-                    <span class="badge">{{reserve.qty}}</span>
+                    <span><b>{{reserve.name}}</b> on {{reserve.time | date: 'fullDate' }} at {{reserve.time | date: 'shortTime' }}</span>
+                    <a ng-click="vm.edit(reserve.id)" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
+                    <a ng-click="vm.remove(reserve.id)" title="Remove"><i class="glyphicon glyphicon-remove"></i></a>
+                    <span class="badge {{reserve.qty | reserveStatus}}">{{reserve.qty}}</span>
                 </li>
             </ul>
         </div>
     </div>
-    </div>
+</div>
 

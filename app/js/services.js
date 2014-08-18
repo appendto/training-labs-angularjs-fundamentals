@@ -8,7 +8,9 @@
 angular.module('introToAngularApp.services', [])
     .value('version', '0.1')
     .factory('Reservations', function($resource) {
-        return $resource('/api/reservations/:id', null,
+        return $resource('/api/reservations/:id', {
+            id: '@id'
+        },
         {
            'update': { method:'PUT' }
         });

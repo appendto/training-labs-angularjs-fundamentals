@@ -372,3 +372,10 @@ footer {
 .create-reservation {
   border-right: 1px solid #e5e5e5;
 }
+
+.reservation-list li a {
+  display: none;
+}
+.reservation-list li:hover a {
+  display: inline-block;
+}

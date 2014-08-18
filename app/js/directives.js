@@ -40,7 +40,7 @@ angular.module('introToAngularApp.directives', [])
             }
         };
     })
-    .directive('tppNavMenu', function($location) {
+    .directive('tppNavMenu', function($location, $rootScope) {
         return {
             restrict: 'E',
             scope: {},
@@ -49,17 +49,29 @@ angular.module('introToAngularApp.directives', [])
                 var path = $location.path().replace('/', ''),
                     shouldBeActive = el.find('[ng-href*="' + path + '"]');
 
-                if (path && shouldBeActive.length) {
+                $rootScope.$on('$routeChangeSuccess', function(event, route) {
+                    path = $location.path().replace('/', '');
+
+                    scope.setActive(path);
+                });
+
+                scope.setActive = function(path) {
+                    shouldBeActive = el.find('[ng-href*="' + path + '"]');
+
                     el.find('li').removeClass('active');
 
-                    shouldBeActive.closest('li').addClass('active');    
-                }    
+                    // Set home active if no route found
+                    if (!path || !shouldBeActive.length) {
+                        el.find('li').eq(0).addClass('active');
+                        return;
+                    }
 
-                scope.setActive = function(element) {
-                    el.find('li').removeClass('active');
-
-                    $(element).closest('li').addClass('active');
+                    $(shouldBeActive).closest('li').addClass('active');
                 };
+
+                if (path && shouldBeActive.length) {
+                    scope.setActive(path);   
+                } 
             }
         };
     });
