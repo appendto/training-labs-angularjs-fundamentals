@@ -29,7 +29,18 @@ config(['$routeProvider',
 			.when('/menu', {
 				templateUrl: 'partials/menu.html',
 				controller: 'MenuCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				resolve: {
+					list: function(Menu, $q) {
+						var dfd = $q.defer();
+						
+						Menu.list().success(function(data) {
+							dfd.resolve(data);
+						});
+
+						return dfd.promise;
+					}
+				}
 			})
 			.when('/contact', {
 				templateUrl: 'partials/contact.html',

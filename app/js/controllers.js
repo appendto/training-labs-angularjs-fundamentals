@@ -85,12 +85,10 @@ angular.module('introToAngularApp.controllers', [])
             self.reservation.date = "";
         };
     })
-    .controller('MenuCtrl', function(Menu) {
+    .controller('MenuCtrl', function(list) {
         var self = this;
 
-        Menu.list().success(function(items) {
-            self.list = items;
-        });
+        self.list = list;
     })
     .controller('ContactCtrl', function(Mail, $scope) {
         this.sent = Mail.sent;

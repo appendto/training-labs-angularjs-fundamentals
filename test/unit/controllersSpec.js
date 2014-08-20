@@ -80,33 +80,25 @@ describe('controllers', function() {
                 $scope: scope
             });
 
-            ReservationsCtrl.name = "foo";
-            ReservationsCtrl.qty = 2;
-            ReservationsCtrl.date = new Date();
-            ReservationsCtrl.time = new Date();
+            ReservationsCtrl.reservation.name = "foo";
+            ReservationsCtrl.reservation.qty = 2;
+            ReservationsCtrl.reservation.date = new Date();
+            ReservationsCtrl.reservation.time = new Date();
             ReservationsCtrl.createReservation();
             expect(ReservationsCtrl.reservations.length).toBe(1);
 
             ReservationsCtrl.clear();
-            expect(ReservationsCtrl.name).toBe("");
-            expect(ReservationsCtrl.qty).toBe("");
-            expect(ReservationsCtrl.date).toBe("");
-            expect(ReservationsCtrl.time).toBe("");
+            expect(ReservationsCtrl.reservation.name).toBe("");
+            expect(ReservationsCtrl.reservation.qty).toBe("");
+            expect(ReservationsCtrl.reservation.date).toBe("");
+            expect(ReservationsCtrl.reservation.time).toBe("");
         }));
     });
     
     describe('MenuCtrl', function() {
         it('should have a MenuCtrl', inject(function($controller) {
             var MenuCtrl = $controller('MenuCtrl', {
-                Menu: {
-                    list: function() {
-                        return {
-                            success: function(fn) {
-                                fn([{}, {}, {}])
-                            }
-                        };
-                    }
-                }
+                list: [{}, {}, {}]
             });
 
             expect(MenuCtrl).toBeDefined();
@@ -114,15 +106,7 @@ describe('controllers', function() {
 
         it('should have a MenuCtrl', inject(function($controller) {
             var MenuCtrl = $controller('MenuCtrl', {
-                Menu: {
-                    list: function() {
-                        return {
-                            success: function(fn) {
-                                fn([{}, {}, {}])
-                            }
-                        };
-                    }
-                }
+                list: [{}, {}, {}]
             });
 
             expect(MenuCtrl.list.length).toBe(3);

@@ -18,6 +18,12 @@
                     <div ng-if="reservations.$error.required">
                         Please enter all required fields
                     </div>
+                    <div ng-if="reservations.date.$error.pattern">
+                        Please format date: mm/dd/yyyy
+                    </div>
+                    <div ng-if="reservations.time.$error.pattern">
+                        Please format time: hh:mm AM
+                    </div>
                 </div>
 
                 <form name="reservations" class="form" ng-class="{ 'validate-form': vm.submitted }" 
@@ -31,10 +37,10 @@
                         <input name="qty" type="number" ng-model="vm.reservation.qty" class="form-control" placeholder="Quantity" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" a2-date-picker ng-model="vm.reservation.date" placeholder="Date" required />
+                        <input name="date" type="text" a2-date-picker ng-pattern="/^(\d{1,2})/(\d{1,2})/(\d{4})$/" ng-model="vm.reservation.date" placeholder="Date" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" a2-time-picker ng-model="vm.reservation.time" start="09:00" placeholder="Time" required />
+                        <input name="time" type="text" a2-time-picker ng-pattern="/^(\d\d):(\d\d)\s(AM|PM)$/" ng-model="vm.reservation.time" start="09:00" placeholder="Time" required />
                     </div>
                     <div class="form-group">
                         <button type="submit" ng-if="!vm.reservation.id" class="btn btn-primary">Create</button>
