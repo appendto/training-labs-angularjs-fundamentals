@@ -3,6 +3,9 @@
 /* Controllers */
 
 angular.module('introToAngularApp.controllers', [])
+    .controller('AppCtrl', function(Navigation) {
+        this.navigationItems = Navigation.list;
+    })
     .controller('MainCtrl', function ($scope) {
         $scope.title = 'Home';
     })

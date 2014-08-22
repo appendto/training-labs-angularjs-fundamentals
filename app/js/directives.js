@@ -43,7 +43,9 @@ angular.module('introToAngularApp.directives', [])
     .directive('tppNavMenu', function($location, $rootScope) {
         return {
             restrict: 'E',
-            scope: {},
+            scope: {
+                items: '='
+            },
             templateUrl: '/partials/directives/tppNavMenu.html',
             link: function(scope, el) {
                 var path = $location.path().replace('/', ''),
@@ -67,6 +69,11 @@ angular.module('introToAngularApp.directives', [])
                     }
 
                     $(shouldBeActive).closest('li').addClass('active');
+                };
+
+                scope.selctedNavItem = scope.items[0];
+                scope.goTo = function(url) {
+                    $location.path(url);
                 };
 
                 if (path && shouldBeActive.length) {

@@ -379,3 +379,20 @@ footer {
 .reservation-list li:hover a {
   display: inline-block;
 }
+
+.mobile-navigation {
+  display: none;
+}
+.main-nav {
+  display: block;
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-navigation {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+  }
+}

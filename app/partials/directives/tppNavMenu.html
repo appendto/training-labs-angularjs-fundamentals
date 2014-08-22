@@ -1,14 +1,9 @@
-<ul class="nav nav-pills pull-right">
-    <li class="active">
-        <a ng-href="#/">Home</a>
-    </li>
-    <li>
-        <a ng-href="#/menu">Our Menu</a>
-    </li>
-    <li>
-        <a ng-href="#/contact">Contact Us</a>
-    </li>
-    <li>
-        <a ng-href="#/reservations">Reservations</a>
+<ul class="main-nav nav nav-pills pull-right">
+    <li ng-repeat="item in items">
+        <a ng-href="#{{item.url}}">{{item.title}}</a>
     </li>
 </ul>
+<div class="form-group mobile-navigation">
+    <select class="form-control" ng-change="goTo(selctedNavItem.url)" ng-model="selctedNavItem" ng-options="item.title for item in items">
+    </select>    
+</div>

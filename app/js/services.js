@@ -35,4 +35,17 @@ angular.module('introToAngularApp.services', [])
 
             return this.sent;
         };
+    })
+    .provider('Navigation', function() {
+        var items = []
+
+        this.setNavigation = function(navItems) {
+            items = navItems;
+        };
+
+        this.$get = function() {
+            return {
+                list: items
+            };
+        };
     });
