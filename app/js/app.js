@@ -7,7 +7,6 @@ angular.module('introToAngularApp', [
 	'ngResource',
 	'ngAnimate',
 	'ngCookies',
-	'ngMessages',
 	'introToAngularApp.directives',
 	'introToAngularApp.controllers',
 	'introToAngularApp.services',
@@ -46,7 +45,7 @@ angular.module('introToAngularApp', [
 			resolve: {
 				list: function(Menu, $q) {
 					var dfd = $q.defer();
-					
+
 					Menu.list().success(function(data) {
 						dfd.resolve(data);
 					});

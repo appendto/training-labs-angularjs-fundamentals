@@ -9,7 +9,7 @@
             <div class="panel-heading">
                 Create a Reservation
             </div>
-            
+
             <div class="panel-body">
                 <div ng-if="vm.submitted && reservations.$invalid" class="alert alert-danger">
                     <div ng-if="reservations.qty.$error.number" >
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <form name="reservations" class="form" ng-class="{ 'validate-form': vm.submitted }" 
+                <form name="reservations" class="form" ng-class="{ 'validate-form': vm.submitted }"
                             novalidate ng-submit="vm.createReservation()">
                     <input name="id" type="hidden" ng-model="vm.reservation.id" />
 
@@ -40,7 +40,7 @@
                         <input name="date" type="text" a2-date-picker ng-pattern="/^(\d{1,2})/(\d{1,2})/(\d{4})$/" ng-model="vm.reservation.date" placeholder="Date" required />
                     </div>
                     <div class="form-group">
-                        <input name="time" type="text" a2-time-picker ng-pattern="/^(\d\d):(\d\d)\s(AM|PM)$/" ng-model="vm.reservation.time" start="09:00" placeholder="Time" required />
+                        <input name="time" type="text" a2-time-picker ng-pattern="/^(\d?\d):(\d\d)\s(AM|PM)$/" ng-model="vm.reservation.time" start="09:00" placeholder="Time" required />
                     </div>
                     <div class="form-group">
                         <button type="submit" ng-if="!vm.reservation.id" class="btn btn-primary">Create</button>
@@ -50,7 +50,7 @@
                 </form>
             </div>
         </div>
-        
+
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
@@ -72,4 +72,3 @@
         </div>
     </div>
 </div>
-
