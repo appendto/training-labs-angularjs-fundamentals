@@ -1,11 +1,11 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="introToAngularApp"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="introToAngularApp"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="introToAngularApp"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-app="introToAngularApp" > <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> <!-- LAB: add ng-app here -->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--> <!-- LAB: add ng-app here -->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--> <!-- LAB: add ng-app here -->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--> <!-- LAB: add ng-app here -->
   <head>
     <meta charset="utf-8">
-    <title ng-bind="'The Pizza Place ' + page.title"></title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -18,33 +18,35 @@
     <link rel="stylesheet" href="css/app.css">
 
   </head>
-  <body ng-controller="AppCtrl as app">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
+  
+  <body>
     <div class="container">
         <div class="header">
-          <!-- <div class="cart pull-right">
-              <a class="btn btn-primary ng-binding">
-                  <span class="glyphicon glyphicon-shopping-cart"></span>
-                  0
-              </a>
-          </div> -->
-
-          <tpp-nav-menu items="app.navigationItems"></tpp-nav-menu>
 
           <h3 class="text-muted">the pizza place</h3>
       </div>
 
-        <section id="main" ng-view></section>
+        <section id="main">
+          
+          <!-- 
+            LAB: Create contact form here
+
+            1. Create inputs for name, email and assign to the root scope
+            2. Create select box containg types of emails and assign to root scope
+            3. Create a textarea and assign to root scope
+            4. Display all of the model data to see 2 way binding is working
+
+          -->
+
+
+        </section>
     </div>
 
     <footer class="navbar footer navbar-fixed-bottom">
         <p>&copy; 2014 the pizza place</p>
     </footer>
 
+    <!-- Third party scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/kendo-ui/js/kendo.core.min.js"></script>
     <script src="bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
@@ -55,11 +57,10 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <!-- <script src="bower_components/underscore/underscore.js"></script> -->
-    <!-- <script src="bower_components/postal.js/lib/postal.min.js"></script> -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
 
+    <!-- App scripts -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
